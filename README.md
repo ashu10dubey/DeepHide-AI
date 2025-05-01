@@ -29,17 +29,39 @@ Welcome to **DeepHide AI**, a secure, AI-driven encryption system that embeds co
 
 ```bash
 DeepHide-AI/
-├── deep_hide_gui.py          # GUI built with Tkinter
-├── stegano_encoder.py        # LSB-based steganography logic
-├── hybrid_crypto/
-│   ├── aes_cipher.py         # AES encryption/decryption
-│   ├── ecc_key_manager.py    # ECC key generation and management
-├── assets/                   # Sample images and test files
-├── README.md                 # Project documentation
-└── requirements.txt          # Required Python packages
-```
+│
+├── .vscode/
+│   └── settings.json               # Live server config (e.g., port 5500)
+│
+├── AEScipher.py                   # AES encryption using CBC and PKCS padding
+├── Decrypter.py                   # AES decryption with ECC key extraction
+├── Encrypter.py                   # Encrypts input using AES, saves as PNG
+├── Hybrid.py                      # Manages both AES and ECC hybrid flow
+├── decryptonce.py                 # Decrypts once using ECC + AES
+│
+├── static/
+│   ├── cipher/
+│   │   ├── cipher.txt             # Encrypted text (AES)
+│   │   ├── cipherImage.png        # Image with embedded ciphertext
+│   │   ├── decryptedImage.jpg     # Output image after decryption
+│   │
+│   ├── css/
+│   │   ├── style.css              # Base styling
+│   │   └── index.css              # Styling for main page
+│   │
+│   ├── js/
+│   │   └── functions.js           # JS actions for encryption, decryption, UI
+│
+├── templates/
+│   ├── encrypt.html               # UI page for encryption
+│   ├── decrypt.html               # UI page for decryption
+│   ├── index.html                 # Home interface
+│   └── success.html               # Results after operation
+│
+├── app.py                         # Flask app entry point
+├── deletesecret.py                # Auto-deletes temporary/generated files
 
----
+```
 
 ##  Tech Stack
 
